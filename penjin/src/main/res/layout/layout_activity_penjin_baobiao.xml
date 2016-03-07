@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F2"
+    android:orientation="vertical">
+
+    <com.penjin.android.view.TitleBarView
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:centerText="管理报表" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="图形报表" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/gray_8f"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/leftDayBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="今 天"
+                android:textColor="#FF8800"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="2px"
+            android:layout_height="match_parent"
+            android:background="@color/gray_8f"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/rightDayBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="前一天"
+                android:textColor="@color/titlebar_backgroud_blue"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/gray_8f" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray_8f" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:text="迟到人数"
+                            android:textColor="@color/gray_8f"
+                            android:textSize="12sp" />
+
+                        <com.penjin.android.widget.PenjinCircleNumber
+                            android:id="@+id/chidaoCircle"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            app:pj_circlenum_backgroud_color="#D8E88E"
+                            app:pj_circlenum_background_width="3dp"
+                            app:pj_circlenum_stroke_color="#B6CF45"
+                            app:pj_circlenum_stroke_width="3dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/arrow_8_right" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_8f" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:text="签卡记录"
+                            android:textColor="@color/gray_8f"
+                            android:textSize="12sp" />
+
+                        <com.penjin.android.widget.PenjinCircleNumber
+                            android:id="@+id/qiankaCircle"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            app:pj_circlenum_backgroud_color="#D8E88E"
+                            app:pj_circlenum_background_width="3dp"
+                            app:pj_circlenum_stroke_color="#B6CF45"
+                            app:pj_circlenum_stroke_width="3dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/arrow_8_right" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@color/gray_8f" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:text="未签人员"
+                            android:textColor="@color/gray_8f"
+                            android:textSize="12sp" />
+
+                        <com.penjin.android.widget.PenjinCircleNumber
+                            android:id="@+id/weiqianCircle"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            app:pj_circlenum_backgroud_color="#FCBF8E"
+                            app:pj_circlenum_background_width="3dp"
+                            app:pj_circlenum_stroke_color="#F58A36"
+                            app:pj_circlenum_stroke_width="3dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/arrow_8_right" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_8f" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:text="请假人员"
+                            android:textColor="@color/gray_8f"
+                            android:textSize="12sp" />
+
+                        <com.penjin.android.widget.PenjinCircleNumber
+                            android:id="@+id/qingjiaCircle"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            app:pj_circlenum_backgroud_color="#FCBF8E"
+                            app:pj_circlenum_background_width="3dp"
+                            app:pj_circlenum_stroke_color="#F58A36"
+                            app:pj_circlenum_stroke_width="3dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/arrow_8_right" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@color/gray_8f" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:text="出差人员"
+                            android:textColor="@color/gray_8f"
+                            android:textSize="12sp" />
+
+                        <com.penjin.android.widget.PenjinCircleNumber
+                            android:id="@+id/chuchaiCircle"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            app:pj_circlenum_backgroud_color="#D4908D"
+                            app:pj_circlenum_background_width="3dp"
+                            app:pj_circlenum_stroke_color="#CB5853"
+                            app:pj_circlenum_stroke_width="3dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/arrow_8_right" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_8f" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:text="外勤人员"
+                            android:textColor="@color/gray_8f"
+                            android:textSize="12sp" />
+
+                        <com.penjin.android.widget.PenjinCircleNumber
+                            android:id="@+id/waiqinCircle"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            app:pj_circlenum_backgroud_color="#D4908D"
+                            app:pj_circlenum_background_width="3dp"
+                            app:pj_circlenum_stroke_color="#CB5853"
+                            app:pj_circlenum_stroke_width="3dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/arrow_8_right" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@color/gray_8f" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:text="加班人员"
+                            android:textColor="@color/gray_8f"
+                            android:textSize="12sp" />
+
+                        <com.penjin.android.widget.PenjinCircleNumber
+                            android:id="@+id/jiabanCircle"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            app:pj_circlenum_backgroud_color="#939CCE"
+                            app:pj_circlenum_background_width="3dp"
+                            app:pj_circlenum_stroke_color="#5B6AC0"
+                            app:pj_circlenum_stroke_width="3dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/arrow_8_right" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_8f" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:text="调休人员"
+                            android:textColor="@color/gray_8f"
+                            android:textSize="12sp" />
+
+                        <com.penjin.android.widget.PenjinCircleNumber
+                            android:id="@+id/tiaoxiuCircle"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            app:pj_circlenum_backgroud_color="#939CCE"
+                            app:pj_circlenum_background_width="3dp"
+                            app:pj_circlenum_stroke_color="#5B6AC0"
+                            app:pj_circlenum_stroke_width="3dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/arrow_8_right" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@color/gray_8f" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

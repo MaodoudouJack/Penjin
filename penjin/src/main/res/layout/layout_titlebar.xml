@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app_title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:background="@color/titlebar_backgroud_blue"
+    android:orientation="vertical" >
+	<RelativeLayout
+	    android:id="@+id/titlebar_left"
+	    android:layout_width="50dp"
+	    android:layout_height="50dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_margin="4dp"
+	    >
+	    <ImageView 
+	        android:id="@+id/titlebar_left_img"
+	       	android:layout_width="match_parent"
+	       	android:layout_height="match_parent"
+	       	android:src="@drawable/saoyisao"
+	       	android:scaleType="center"
+	       	android:drawingCacheQuality="low"
+	       	android:clickable="false"
+	        />
+	</RelativeLayout>
+	
+	<RelativeLayout
+	    android:id="@+id/titlebar_center"
+	    android:layout_width="100dp"
+	    android:layout_height="50dp"
+	    android:layout_centerHorizontal="true"
+	    android:layout_margin="4dp"
+	    >
+	    <TextView 
+	        android:id="@+id/titlebar_center_text"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:text="哈 哈"
+	        android:textSize="20sp"
+	        android:gravity="center"
+			android:textColor="@android:color/white"
+	        />
+	</RelativeLayout>
+	
+    <RelativeLayout
+	    android:id="@+id/titlebar_right"
+	    android:layout_width="40dp"
+	    android:layout_height="40dp"
+	    android:layout_alignParentRight="true"
+	    android:layout_margin="4dp"
+	    >
+	    <ImageView
+	        android:id="@+id/titlebar_right_img"
+	       	android:layout_width="match_parent"
+	       	android:layout_height="match_parent"
+	       	android:src="@drawable/chazhao"
+	       	android:scaleType="center"
+	       	android:drawingCacheQuality="low"
+	       	android:clickable="false"
+	        />
+	</RelativeLayout>
+	
+    <RelativeLayout 
+        android:id="@+id/titlebar_right_extra"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_toLeftOf="@id/titlebar_right"
+        android:layout_marginTop="4dp"
+        android:visibility="invisible"
+        >
+        <ImageView
+	        android:id="@+id/titlebar_right_extra_img"
+	       	android:layout_width="match_parent"
+	       	android:layout_height="match_parent"
+	       	android:src="@drawable/chazhao"
+	       	android:scaleType="center"
+	       	android:drawingCacheQuality="low"
+	       	android:clickable="false"
+	        />
+    </RelativeLayout>
+</RelativeLayout>

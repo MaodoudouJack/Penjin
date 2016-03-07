@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_tabbg"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:drawingCacheQuality="low"
+            android:src="@drawable/image_fengexian" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/wrapper_xiaoxi"
+                style="@style/navibar_line" >
+
+                <ImageButton
+                    android:id="@+id/img_xiaoxi"
+                    style="@style/navibar_item"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:drawingCacheQuality="low"
+                    android:src="@drawable/tongxun_blue_icon" />
+                <TextView
+                    android:id="@+id/unread_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/unread_count_middle"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:drawingCacheQuality="low"
+                    android:visibility="visible" />
+                <TextView
+                    android:id="@+id/tongxunText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:text="通讯"
+                    android:textColor="@color/narivar_bottom_text_blue"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/wrapper_huodong"
+                style="@style/navibar_line" >
+
+                <ImageButton
+                    android:id="@+id/img_huodong"
+                    style="@style/navibar_item"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:drawingCacheQuality="low"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/xiaoxin_icon" />
+				<TextView
+                    android:id="@+id/unread_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/unread_count_middle"
+                    android:drawingCacheQuality="low"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
+                <TextView
+                    android:id="@+id/xiaoxiText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="-4dp"
+                    android:text="消息"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/wrapper_ding"
+                style="@style/navibar_line" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:text="考勤"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/wrapper_gongzuo"
+                style="@style/navibar_line" >
+
+                <ImageButton
+                    android:id="@+id/img_gongzuo"
+                    style="@style/navibar_item"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:drawingCacheQuality="low"
+                    android:src="@drawable/kaoqin_icon" />
+
+                <TextView
+                    android:id="@+id/gongzuoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:text="工作"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/wrapper_geren"
+                style="@style/navibar_line" >
+
+                <ImageButton
+                    android:id="@+id/img_geren"
+                    style="@style/navibar_item"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:drawingCacheQuality="low"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/geren_icon" />
+
+                <TextView
+                    android:id="@+id/gerenText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:text="个人"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/img_ding"
+        style="@style/navibar_item"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="7dp"
+        android:drawingCacheQuality="low"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/cross_center_1" />
+
+</RelativeLayout>

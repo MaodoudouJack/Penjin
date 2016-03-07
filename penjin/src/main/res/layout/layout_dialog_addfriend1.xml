@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl"
+    android:layout_width="289dp"
+    android:layout_height="150dp"
+    android:layout_gravity="center"
+    android:background="@drawable/common_rectangel_shape"
+    android:visibility="visible" >
+	
+    <RelativeLayout 
+        android:id="@+id/add_friend_username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/common_rectangel_shape"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+        <ImageView 
+            android:id="@+id/icon_phone"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignLeft="@id/et_phone"
+            android:layout_alignTop="@id/et_phone"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/icon_phone"
+            />
+        <LinearLayout 
+            android:layout_toRightOf="@id/icon_phone"
+            android:layout_width="0.5dp"
+            android:layout_marginLeft="7dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray"
+            ></LinearLayout>
+        <EditText 
+            android:id="@+id/friend_id"
+            android:layout_toRightOf="@id/icon_phone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@drawable/common_rectangel_shape_edittext"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            />
+    </RelativeLayout>
+    
+    <TextView
+        android:id="@+id/add_friend_confirm"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/common_rectangel_shape"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginBottom="15dp"
+        android:text="确 定"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        />
+    
+</RelativeLayout>

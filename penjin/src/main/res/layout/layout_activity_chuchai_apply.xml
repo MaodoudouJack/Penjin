@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F2"
+    android:orientation="vertical">
+
+    <com.penjin.android.view.TitleBarView
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:centerText="出差申请" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray_8f" />
+
+    <RelativeLayout
+        android:id="@+id/billTypeWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/common_pressed_selector"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="单据类型"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/danyuRight"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/arrow_8_right" />
+
+        <TextView
+            android:id="@+id/danjuType"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@id/danyuRight"
+            android:gravity="center"
+            android:text="类型加载中" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_8f" />
+
+    <RelativeLayout
+        android:id="@+id/billSubTypeWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/common_pressed_selector"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="出差类型"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/chuchaiRight"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/arrow_8_right" />
+
+        <TextView
+            android:id="@+id/chuchaiType"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@id/chuchaiRight"
+            android:gravity="center"
+            android:text="类型加载中" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_8f" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray_8f" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadeScrollbars="false"
+        android:fadingEdgeLength="0dp"
+        android:scrollbarSize="0dp"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/chuchaiList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/addWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/chuchaiList"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="添加出差地点"
+                    android:textColor="#006FFF"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@id/addWrapper"
+                android:background="@color/gray_8f"
+                android:orientation="vertical" />
+
+            <RelativeLayout
+                android:id="@+id/startDateWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/line1"
+                android:background="@drawable/common_pressed_selector"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center"
+                    android:text="开始时间"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/startRight"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/arrow_8_right" />
+
+                <TextView
+                    android:id="@+id/startDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="16dp"
+                    android:layout_toLeftOf="@id/startRight"
+                    android:gravity="center"
+                    android:text="2016年2月12日" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@id/startDateWrapper"
+                android:background="@color/gray_8f"
+                android:orientation="vertical" />
+
+            <RelativeLayout
+                android:id="@+id/endDateWapper"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/line2"
+                android:background="@drawable/common_pressed_selector"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center"
+                    android:text="结束日期"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/endDateRight"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/arrow_8_right" />
+
+                <TextView
+                    android:id="@+id/endDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="16dp"
+                    android:layout_toLeftOf="@id/endDateRight"
+                    android:gravity="center"
+                    android:text="2016年4月1日" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@id/endDateWapper"
+                android:background="@color/gray_8f"
+                android:orientation="vertical" />
+
+
+            <LinearLayout
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@id/line3"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray_8f"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/detailWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_below="@id/line4"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="16dp"
+                        android:gravity="center"
+                        android:text="申请描述"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/remark"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/common_editor_bg_black_border"
+                        android:gravity="center_vertical|left"
+                        android:hint="不能超过30个字符"
+                        android:paddingLeft="8dp"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="6dp"
+                        android:src="@drawable/arrow_8_right" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line5"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@id/detailWrapper"
+                android:background="@color/gray_8f"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/line6"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@id/line5"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray_8f"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/flowWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_below="@id/line6"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="16dp"
+                        android:gravity="center"
+                        android:text="审批流程"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/flowLineWrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp">
+
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/common_editor_bg_blue_border">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/arrow_8_right" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="提交"
+                            android:textColor="@color/pj_text_blue"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+
+                    <com.penjin.android.view.penjin.FlowLine
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <com.penjin.android.view.penjin.FlowMan
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line7"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@id/flowWrapper"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray_8f"
+                android:orientation="vertical" />
+
+            <Button
+                android:id="@+id/apply"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/line7"
+                android:background="@color/titlebar_backgroud_blue"
+                android:gravity="center"
+                android:text="提 交 申 请"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

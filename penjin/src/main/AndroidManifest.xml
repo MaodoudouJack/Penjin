@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.penjin.android"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <!-- JPush required-->
+    <permission
+        android:name="com.penjin.android.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.penjin.android.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <!-- Required -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <application
+        android:name="com.penjin.android.application.BaseApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="fuckaholic#fuckaholic" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="HPglZg8QWc0zquB3xILes8H1" />
+
+        <!-- *********************************JPush***************************-->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="9c9efd93135700dfcc3c0556" />
+
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@style/activity_no_titlebar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false"></service>
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":push">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":push">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":push">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:process=":push" />
+
+        <!-- **************************** Activity ********************************** -->
+
+        <activity
+            android:name="com.penjin.android.activity.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.penjin.android.message.chat.EMChatActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.contact.EMContactActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.ui.EaseShowBigImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.group.GroupsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.group.GroupSimpleDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.group.GroupPickContactsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.group.NewGroupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.group.PublicGroupsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.group.PublicGroupsSeachActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.group.GroupBlacklistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.group.GroupDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.group.ExitGroupDialog"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.ui.EditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.contact.NewFriendsMsgActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.vedio.VideoCallActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.vedio.VoiceCallActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.message.contact.EMContactDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="com.penjin.android.activity.RegistUserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name=".activity.geren.MinpianActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name="cn.hugo.android.scanner.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name=".activity.geren.GerenInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar"></activity>
+        <activity
+            android:name=".activity.kaoqin.GerenKaoqinActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name=".activity.kaoqin.MonthKaoqinActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name=".activity.gongzuo.PenjinApplyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+        <activity
+            android:name=".activity.gongzuo.PenjinBaobiaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar"></activity>
+        <activity
+            android:name=".activity.gongzuo.YidiKaoqinApplyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar"></activity>
+        <activity
+            android:name=".activity.photo.PenjinGalleryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+
+        <activity
+            android:name=".activity.gongzuo.ChuchaiApplyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+
+        <activity
+            android:name=".activity.gongzuo.JiabanApplyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+
+        <activity
+            android:name=".activity.gongzuo.BukaApplyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+
+        <activity
+            android:name=".activity.gongzuo.QingjiaApplyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+
+        <activity
+            android:name=".activity.gongzuo.TiaoxiuApplyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+
+        <activity
+            android:name=".activity.apply.MyApplyDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+
+        <activity
+            android:name=".activity.kaoqin.GerenPaibanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+
+        <activity
+            android:name=".activity.apply.ChuchaiApplyDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+
+        <!-- **************************** Service ********************************** -->
+        <service android:name="com.easemob.chat.EMChatService" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <receiver android:name="com.easemob.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+    </application>
+
+</manifest>

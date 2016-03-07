@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mao="http://schemas.android.com/apk/res/com.penjin.android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="#f2f0eb"
+    android:orientation="vertical" >
+
+    <com.penjin.android.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        mao:rightExtraImage="@drawable/phone_48"
+        android:layout_height="wrap_content"/>
+
+    <com.penjin.android.message.view.EaseChatInputMenu
+        android:id="@+id/input_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/input_menu"
+        android:layout_below="@id/title_bar" >
+
+        <com.penjin.android.message.view.EaseChatMessageList
+            android:id="@+id/message_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        
+        <com.penjin.android.message.view.EaseVoiceRecorderView
+            android:id="@+id/voice_recorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</RelativeLayout>

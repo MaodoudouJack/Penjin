@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl"
+        android:layout_width="289dp"
+        android:layout_height="150dp"
+        android:background="@drawable/zhuce_kuang_1"
+        android:visibility="visible" >
+
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="7.1dp"
+            android:layout_marginTop="7.1dp"
+            android:background="@drawable/zhuce_cha" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="27dp"
+            android:layout_marginTop="38.47191dp"
+            android:background="@drawable/zhuce_shurukuang"
+            android:editable="false"
+            android:hint="请输入手机号"
+            android:inputType="number"
+            android:paddingLeft="32.35955dp"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@id/et_phone"
+            android:layout_alignTop="@id/et_phone"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/icon_phone" />
+        
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="265dp"
+            android:layout_height="0.3595506dp"
+            android:layout_below="@id/et_phone"
+            android:layout_marginLeft="7.1dp"
+            android:layout_marginRight="3.2dp"
+            android:layout_marginTop="6.5dp"
+            android:background="@drawable/zhuce_fengexian_tianziliao" />
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_below="@id/line"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="确 定"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+    </RelativeLayout>
+

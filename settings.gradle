@@ -1,0 +1,4 @@
+include ':penjin'
+include ':barcodeScanner'
+include ':ViewPagerIndicator'
+include ':viewPagerIndicator_Library'
