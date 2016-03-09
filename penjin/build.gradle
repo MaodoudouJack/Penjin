@@ -25,7 +25,7 @@ repositories {
     maven {
         url "https://jitpack.io"
     }
-    maven{
+    maven {
         url "http://repo1.maven.org/maven2/"
     }
     mavenCentral()
@@ -53,4 +53,7 @@ dependencies {
     compile 'uk.me.lewisdeane.ldialogs:ldialogs@aar'
     compile 'com.github.recruit-lifestyle:WaveSwipeRefreshLayout:1.4'
     compile files('libs/jpush-android-2.0.6.jar')
+
+    //2016-3-9添加的依赖
+    compile 'com.jungly:gridPasswordView:0.3'
 }

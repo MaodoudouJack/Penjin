@@ -8,6 +8,7 @@ import com.easemob.util.NetUtils;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;
 import com.penjin.android.R;
+import com.penjin.android.activity.regist.RegistPhone;
 import com.penjin.android.constants.HttpConstants;
 import com.penjin.android.constants.PenjinConstants;
 import com.penjin.android.domain.PenjinCompany;
@@ -83,7 +84,7 @@ public class LoginActivity extends Activity implements OnClickListener {
                         public void gotResult(int i, String s, Set<String> set) {
                             System.out.println("jpush tags inited!!!!!!!!!!!!!");
                         }
-                    };
+                    };/**/
                     JPushInterface.setTags(LoginActivity.this, tags, callback);
                     Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT)
                             .show();
@@ -270,7 +271,7 @@ public class LoginActivity extends Activity implements OnClickListener {
                 doLogin();
                 break;
             case R.id.regist:
-                Intent intent = new Intent(this, RegistUserActivity.class);
+                Intent intent = new Intent(this, RegistPhone.class);
                 startActivity(intent);
                 break;
             case R.id.relogin:
