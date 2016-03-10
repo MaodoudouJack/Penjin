@@ -47,7 +47,9 @@ public class RegistCode extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_activiti_regist_code);
-        this.phoneNum = getIntent().getStringExtra("phoneNum");
+        Intent intent = getIntent();
+        if (intent != null)
+            this.phoneNum = intent.getStringExtra("phoneNum");
         String temp = null;
         if (savedInstanceState != null)
             temp = savedInstanceState.getString("phoneNum");
@@ -169,7 +171,7 @@ public class RegistCode extends Activity implements View.OnClickListener {
         Intent intent = new Intent();
         intent.setClass(this, RegistAccount.class);
         intent.putExtra("phoneNum", phoneNum);
-        intent.putExtra("checkCode", checkCode);
+        intent.putExtra("code", checkCode);
         startActivity(intent);
     }
 
