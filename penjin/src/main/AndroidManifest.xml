@@ -297,6 +297,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/activity_no_titlebar" />
 
+        <activity
+            android:name=".activity.regist.RegistCode"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+
+        <activity
+            android:name=".activity.regist.RegistPhone"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_no_titlebar" />
+
         <!-- **************************** Service ********************************** -->
         <service android:name="com.easemob.chat.EMChatService" />
 

@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.PersistentCookieStore;
+import com.loopj.android.http.RequestHandle;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.ResponseHandlerInterface;
 import com.loopj.android.http.TextHttpResponseHandler;
@@ -74,6 +75,10 @@ public class HttpService {
         }
         return this.sn;
 
+    }
+
+    public RequestHandle postRequestWithHandle(Context context,String url,RequestParams params,ResponseHandlerInterface responseHandlerInterface) throws Exception{
+        return this.httpClient.post(context,url,params,responseHandlerInterface);
     }
 
     public void setSn(String sn) {
