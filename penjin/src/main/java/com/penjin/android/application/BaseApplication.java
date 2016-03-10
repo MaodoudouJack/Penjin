@@ -50,7 +50,7 @@ public class BaseApplication extends Application {
     private void init() {
         String packageName = AppUtils.getCurrentProcessName(this);
         if (packageName != null && packageName.equals("com.penjin.android")) {
-            SDKInitializer.initialize(getApplicationContext());
+            //SDKInitializer.initialize(getApplicationContext());
             Res.init(this);
         }
     }

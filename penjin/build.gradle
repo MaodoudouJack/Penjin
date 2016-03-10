@@ -8,6 +8,9 @@ android {
         applicationId "com.penjin.android"
         minSdkVersion 14
         targetSdkVersion 18
+        dexOptions {
+            jumboMode = true
+        }
     }
 
     buildTypes {
